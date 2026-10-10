@@ -1,0 +1,40 @@
+{
+  "adversarial_cli_and_read_only_cases_in_tests": 22,
+  "all_expected_outcomes_verified": true,
+  "commands": [
+    {
+      "actual_exit": 0,
+      "command": "python3 tool.py examples/pass.xml --require-namespaced-attributes",
+      "expected_exit": 0,
+      "output_sha256": "7bbcd62dbbeb40d35a5aa42534f70c540dbad3a64688ca7fbe397c9a74e7d6ff",
+      "status": "pass"
+    },
+    {
+      "actual_exit": 1,
+      "command": "python3 tool.py examples/fail.xml --require-namespaced-attributes",
+      "expected_exit": 1,
+      "output_sha256": "1f5c2d05eb03cc7eed39329de3e4925fe499800a0b53cc1ec7d16792bb5d5c0d",
+      "status": "fail"
+    },
+    {
+      "actual_exit": 2,
+      "command": "python3 tool.py examples/malformed.xml --require-namespaced-attributes",
+      "expected_exit": 2,
+      "output_sha256": "1fba95137b7c4a55b4dd513aa5542a8d24e4a3b4ae4b772f6153c12181182ab3",
+      "status": "error"
+    },
+    {
+      "actual_exit": 0,
+      "command": "python3 tool.py --help",
+      "expected_exit": 0
+    },
+    {
+      "actual_exit": 0,
+      "command": "python3 -m unittest -v test_tool.py",
+      "expected_exit": 0,
+      "test_count": 25
+    }
+  ],
+  "reverified_date": "2026-10-09",
+  "runtime": "3.12.14"
+}

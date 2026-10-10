@@ -1,0 +1,157 @@
+{
+  "schema_version": 1,
+  "slug": "xml-namespace-inventory",
+  "domain": "data",
+  "guidance_group": "medium",
+  "source_commit": "1286096c10a23bbb04aca83679ae3c31f3326030",
+  "source_repository": "mytestapp20261001-collab/mytest-engineering-toolbox",
+  "source_repository_id": 1411411288,
+  "source_path": "tools/xml-namespace-inventory",
+  "root_path": ".",
+  "publication_status": "prepared_only; coordinator verifies final repository identity and remote CI",
+  "expected_repository": "mytestapp20261001-collab/xml-namespace-inventory",
+  "repository_id": null,
+  "preserved_files": [
+    {
+      "path": "README.md",
+      "size_bytes": 5887,
+      "sha256": "761f7f4415173da6bf82693460f436a3a6afbae2abe0b9604b76ad5abf9f4b0b",
+      "git_blob_sha1": "ab3550e5a4f0c09c3abda6eb8cbd7799c683cd13",
+      "utf8": true,
+      "source_path": "tools/xml-namespace-inventory/README.md"
+    },
+    {
+      "path": "SKILL.md",
+      "size_bytes": 4893,
+      "sha256": "4aa8ccd910ab2929a5fc383adfb6b06adecaaea22ff70fd338283f6887e43754",
+      "git_blob_sha1": "b576dd994dd291ffa9b3f79826d00773f8d05f4e",
+      "utf8": true,
+      "source_path": "tools/xml-namespace-inventory/SKILL.md"
+    },
+    {
+      "path": "examples/fail.xml",
+      "size_bytes": 36,
+      "sha256": "4bce81d180681556b27b1dbec2bff5293c3c4832e71bad1eff163b4a2cc3552d",
+      "git_blob_sha1": "352f4c0659c8cdde842260aa1f3d7c0b5a9d1d49",
+      "utf8": true,
+      "source_path": "tools/xml-namespace-inventory/examples/fail.xml"
+    },
+    {
+      "path": "examples/malformed.xml",
+      "size_bytes": 82,
+      "sha256": "1a4d39fe7b0eac89fbb3adef228a9165f536df0475b86373c838ef8b038e7375",
+      "git_blob_sha1": "6f3ee709b5580d2a4b1498ac4419d584346776bf",
+      "utf8": true,
+      "source_path": "tools/xml-namespace-inventory/examples/malformed.xml"
+    },
+    {
+      "path": "examples/pass.xml",
+      "size_bytes": 89,
+      "sha256": "79e950a68c30cf2604e818740dbbed5da87f3441d07296a4be4ffea7a4027f50",
+      "git_blob_sha1": "d82b41695e5fd8c26ba988eeaf942014b652a236",
+      "utf8": true,
+      "source_path": "tools/xml-namespace-inventory/examples/pass.xml"
+    },
+    {
+      "path": "test_tool.py",
+      "size_bytes": 7739,
+      "sha256": "8365e960b267c7cd4bd6c5181c113f5e4f871f1aff3dc558ba83b24f6c31afb1",
+      "git_blob_sha1": "9dba761347b0aa5c9ead354d0e3551d07e91cd9f",
+      "utf8": true,
+      "source_path": "tools/xml-namespace-inventory/test_tool.py"
+    },
+    {
+      "path": "tool.py",
+      "size_bytes": 7745,
+      "sha256": "4a7116d50fd2b57bd8f00eb04d7965e3d731310a8f8c428bd629fca35ab8a3ea",
+      "git_blob_sha1": "8b63e7bf5b5127fb97851cfdcec1655118ba0edb",
+      "utf8": true,
+      "source_path": "tools/xml-namespace-inventory/tool.py"
+    },
+    {
+      "path": "verification.json",
+      "size_bytes": 1220,
+      "sha256": "60459426c7235f3da58628d0c3923c4aa4049372c12f5d720bc8bdbc689c2d81",
+      "git_blob_sha1": "9f51fad53fe03119c7e83558f2e0caf2650ec947",
+      "utf8": true,
+      "source_path": "tools/xml-namespace-inventory/verification.json"
+    },
+    {
+      "path": "LICENSE",
+      "size_bytes": 1076,
+      "sha256": "dce76471613629e93f3f98b7aaa6f72ff9adb88204a3f83d3045952017ab2f46",
+      "git_blob_sha1": "677c4463d59b560db9c1fde1052eff6eefa6441a",
+      "utf8": true,
+      "source_path": "LICENSE"
+    },
+    {
+      "path": ".gitignore",
+      "size_bytes": 62,
+      "sha256": "e4d5aecc4cd36f593c2e7f3dad08b24261b13466b898004a445614058d29d8de",
+      "git_blob_sha1": "fe9f8fb619601213cbfef4f6eadb5d413d8f7f01",
+      "utf8": true,
+      "source_path": ".gitignore"
+    }
+  ],
+  "readme_checks": [
+    {
+      "label": "README example",
+      "args": [
+        "tool.py",
+        "examples/pass.xml",
+        "--require-namespaced-attributes"
+      ],
+      "expected_exit": 0,
+      "output": "json",
+      "documented_command": "python3 tool.py examples/pass.xml --require-namespaced-attributes"
+    },
+    {
+      "label": "README example",
+      "args": [
+        "tool.py",
+        "examples/fail.xml",
+        "--require-namespaced-attributes"
+      ],
+      "expected_exit": 1,
+      "output": "json",
+      "documented_command": "python3 tool.py examples/fail.xml --require-namespaced-attributes"
+    },
+    {
+      "label": "README example",
+      "args": [
+        "tool.py",
+        "examples/malformed.xml",
+        "--require-namespaced-attributes"
+      ],
+      "expected_exit": 2,
+      "output": "json",
+      "documented_command": "python3 tool.py examples/malformed.xml --require-namespaced-attributes"
+    },
+    {
+      "label": "CLI help",
+      "args": [
+        "tool.py",
+        "--help"
+      ],
+      "expected_exit": 0,
+      "output": "help"
+    },
+    {
+      "label": "CLI missing input",
+      "args": [
+        "tool.py"
+      ],
+      "expected_exit": 2,
+      "output": "json"
+    },
+    {
+      "label": "CLI unknown argument",
+      "args": [
+        "tool.py",
+        "--unsupported-migration-test"
+      ],
+      "expected_exit": 2,
+      "output": "json"
+    }
+  ]
+}

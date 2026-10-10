@@ -1,0 +1,1 @@
+<!DOCTYPE root [<!ENTITY secret SYSTEM "file:///not-read">]><root>&secret;</root>
