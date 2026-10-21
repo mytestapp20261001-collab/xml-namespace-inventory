@@ -6,7 +6,7 @@ import math
 import re
 import stat
 import sys
-from decimal import Decimal, InvalidOperation
+from decimal import Context, Decimal, InvalidOperation
 from pathlib import Path
 
 MAX_BYTES = 8 * 1024 * 1024
@@ -41,10 +41,14 @@ def unique_pairs(pairs):
         result[key] = value
     return result
 
+def parse_decimal(value):
+    # Decimal construction must not inherit a host application's disabled traps.
+    return Decimal(value, context=Context(traps=[InvalidOperation]))
+
 def parse_json(text):
     try:
         result = json.loads(text, object_pairs_hook=unique_pairs,
-                            parse_float=Decimal, parse_constant=reject_constant)
+                            parse_float=parse_decimal, parse_constant=reject_constant)
     except InputError:
         raise
     except (ValueError, RecursionError, InvalidOperation):
